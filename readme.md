@@ -1,4 +1,4 @@
-# Low-Level C System Programming Projects
+# C System Programming Projects
 
 This repository contains a collection of low-level C system programming projects. Each project focuses on different aspects of system programming, including file handling, process management, memory management, web servers etc.
 
