@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/socket.h>  //for socket(), connect(), send(), recv(), close functions
-#include <arpa/inet.h>   //for sockaddr_in, inet_addr(), htons() functions
-#include <netinet/in.h>  //for sockaddr_in, inet_addr()
-#define PROXY "127.0.01" // IP Address of local host
-#define PROXYPORT 9050   // default proxy port
+#include <sys/socket.h>   //for socket(), connect(), send(), recv(), close functions
+#include <arpa/inet.h>    //for sockaddr_in, inet_addr(), htons() functions
+#include <netinet/in.h>   //for sockaddr_in, inet_addr()
+#define PROXY "127.0.0.1" // IP Address of local host
+#define PROXYPORT 9050    // default proxy port
 
 // making specific data types for the port, ip addresses and other variables
 typedef unsigned char int8;
