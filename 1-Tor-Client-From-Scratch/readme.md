@@ -88,3 +88,5 @@ The proxy server sends a response back to the client, which contains:
 4. **Limited Commands:** SOCKS4 supports only TCP connections. SOCKS5 adds support for UDP.
 
 5. **DNS Resolution:** The client handles DNS resolution (translating domain names to IP addresses). This means the client must resolve the server's IP address before making a request.
+
+**NOTE**: Refer [SOCKS4PROTOCOL](https://www.openssh.com/txt/socks4.protocol) for more detailed summary.
