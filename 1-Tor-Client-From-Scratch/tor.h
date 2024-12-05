@@ -32,3 +32,6 @@ struct proxy_response
     int32 __;
 };
 typedef struct proxy_response Res;
+
+Req *request(const char *, const int);
+int main(int, char **);
