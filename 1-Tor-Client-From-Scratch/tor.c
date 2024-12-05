@@ -1,5 +1,23 @@
 #include "tor.h"
 
+Req *request(const char *dstip, const int dstport)
+{
+    // allocasting memort for the structure and reference the length of structure
+    Req *req;
+
+    // allocating memory for the structure
+    req = malloc(reqsize);
+
+    // allocating memory according to the protocol
+    req->vn = 4;
+    req->cd = 1;
+    req->dstport = htons(dstport);
+    req->dstip = inet_addr(dstip);
+    strncpy(req->userid, USERNAME, 7);
+
+    return req;
+}
+
 int main(int argc, char *argv[])
 {
     char *host; // host is server we wanna connnect to
