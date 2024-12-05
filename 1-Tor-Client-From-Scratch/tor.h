@@ -7,6 +7,8 @@
 #include <netinet/in.h>   //for sockaddr_in, inet_addr()
 #define PROXY "127.0.0.1" // IP Address of local host
 #define PROXYPORT 9050    // default proxy port
+#define reqsize sizeof(struct proxy_request)
+#define ressize sizeof(struct proxy_response)
 
 // making specific data types for the port, ip addresses and other variables
 typedef unsigned char int8;
