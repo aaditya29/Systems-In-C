@@ -44,4 +44,15 @@ int main(int argc, char *argv[])
     sock.sin_family = AF_INET;               // setting the address family to IPv4
     sock.sin_port = htons(PROXYPORT);        // setting the port number
     sock.sin_addr.s_addr = inet_addr(PROXY); // setting the IP address
+
+    // Initialising actual connection
+    if (connect(s, (struct sockaddr *)&sock, sizeof(sock)))
+    {
+        perror("connect");
+        return -1;
+    } // connecting to the server
+
+    printf("Connected to proxy\n");
+    close(s); // closing the socket
+    return 0;
 }
