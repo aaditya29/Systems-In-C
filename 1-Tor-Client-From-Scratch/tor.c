@@ -28,7 +28,8 @@ int main(int argc, char *argv[])
     Req *req;
     Res *res;
     char buf[ressize];
-    int success; // making predicate or boolean operation for true or false
+    int success;   // making predicate or boolean operation for true or false
+    char tmp[512]; // temporary buffer
 
     if (argc < 3)
     {
@@ -101,6 +102,17 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Unable to establish the connection and traverse the proxy."
                         "Error code: %d\n",
                 res->cd);
+
+        memset(tmp, 0, 512);
+        snprintf(tmp, 511,
+                 "HEAD / HTTP/1.0\r\n"
+                 "Host: www.networktechnology.org\r\n"
+                 "\r\n");           // allotting data to buffer
+        write(s, tmp, strlen(tmp)); // writing the data to the server
+        // zeroing out the buffer
+        memset(tmp, 0, 512);
+        read(s, tmp, 511);     // reading the data from the server
+        printf("'%s'\n", tmp); // printing the data
         close(s);
         free(req);
 
