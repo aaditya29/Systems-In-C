@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 
         return -1;
     }
-    res = buf;                 // to access proxy response
+    res = (Res *)buf;          // to access proxy response and typecasting struct to string
     success = (res->cd == 90); // if cd == 90 then success is true else false
     if (!success)
     {
