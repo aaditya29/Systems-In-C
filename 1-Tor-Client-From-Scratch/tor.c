@@ -1,8 +1,9 @@
 #include "tor.h"
 
+// packet that initialised proxy connection
 Req *request(const char *dstip, const int dstport)
 {
-    // allocasting memort for the structure and reference the length of structure
+    // allocasting memory for the structure and reference the length of structure
     Req *req;
 
     // allocating memory for the structure
@@ -24,6 +25,8 @@ int main(int argc, char *argv[])
     int port;   // for port number
     int s;
     struct sockaddr_in sock; // struct to hold ip addresses
+    Req *req;
+    char buf[ressize];
 
     if (argc < 3)
     {
@@ -71,6 +74,20 @@ int main(int argc, char *argv[])
     } // connecting to the server
 
     printf("Connected to proxy\n");
+    req = request(host, port); // making a request to the server
+    write(s, req, reqsize);    // writing the request to the server
+    // making sure buffer is empty
+    memset(buf, 0, ressize);
+    read(s, buf, ressize); // reading the response from the server
+    // if read operation fails
+    if (read(s, buf, ressize) < 1)
+    {
+        perror("read");
+        free(req);
+        close(s);
+
+        return -1;
+    }
     close(s); // closing the socket
     return 0;
 }
