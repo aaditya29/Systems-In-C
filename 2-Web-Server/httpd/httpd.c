@@ -8,3 +8,14 @@
 #include <netinet/in.h>
 
 #define LISTENADDR "127.0.0.1" // IP Address of local host
+
+int srv_init()
+{
+}
+
+int main(int argc, char *argv[])
+{
+    int s;      // socket file descriptor
+    char *port; // port number
+    s = srv_init();
+}
