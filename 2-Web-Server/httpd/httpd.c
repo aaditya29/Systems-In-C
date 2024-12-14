@@ -15,7 +15,16 @@ int srv_init()
 
 int main(int argc, char *argv[])
 {
-    int s;      // socket file descriptor
-    char *port; // port number
-    s = srv_init();
+    int s;        // socket file descriptor
+    char *port;   // port number
+    if (argc < 2) // means we are just starting the program
+    {
+        fprintf(stderr, "Usage: %s <listening port>\n", argv[0]); // print error message with argv[0] as the name of executable
+        return -1;
+    }
+    else
+    {
+        port = argv[1];
+    }
+    s = srv_init(atoi(port)); // convert port to integer and pass it to srv_init function
 }
