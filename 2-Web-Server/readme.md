@@ -14,3 +14,45 @@ A web server is a system that delivers content or services to end users over the
 - **Hardware**: Physical server machines that store web server software and website data.
 - **Software**: Web server software like Apache, Nginx, or Microsoft IIS that handles HTTP requests and responses.
 - **Protocols**: HTTP/HTTPS protocols used for communication between the client and server.
+
+## Building a Web Server in C
+
+To build a simple web server in C, follow these steps:
+
+### Prerequisites
+
+- Basic knowledge of C programming
+- A C compiler (e.g., GCC)
+- Basic understanding of networking concepts
+
+### Steps
+
+1. **Setup the Environment**:
+
+   - Install a C compiler like GCC.
+   - Create a new directory for your project.
+
+2. **Create the Server Code**:
+
+   - Create a new C file.
+   - Include necessary headers.
+
+3. **Initialize the Server**:
+
+   - Define constants and variables.
+
+4. **Create and Bind the Socket**:
+
+   - Create a socket and bind it to the specified port.
+
+5. **Listen for Connections**:
+
+   - Start listening for incoming connections.
+
+6. **Accept and Handle Requests**:
+
+   - Accept incoming connections and handle requests.
+
+7. **Compile and Run**:
+   - Compile the server code.
+   - Run the server.
