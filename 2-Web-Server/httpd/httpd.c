@@ -23,6 +23,10 @@ int srv_init(int portno)
     srv.sin_family = AF_INET;                    // setting the address family
     srv.sin_addr.s_addr = inet_addr(LISTENADDR); // setting the IP address
     srv.sin_port = htons(portno);                // setting the port number
+
+    if(bind(s, (sockaddr *)&srv, sizeof(srv)){
+        
+    } // binding the socket to the address
 }
 
 int main(int argc, char *argv[])
