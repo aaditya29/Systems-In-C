@@ -46,3 +46,17 @@ In this example:
 - `B` and `C` are the children of `A`.
 - `D`, `E`, `F`, and `G` are the children of `B` and `C`.
 - The leaves of the tree can be int. char or char \* with string inside to store the data of binary tree in standard way.
+
+> But we are going to modify the binary tree in the following way
+
+```
+       [ROOT]
+         /
+    [/USER/]---------------------------------
+       /        |         |         |
+      /      [Value1] [Value2]   [Value3] etc.
+     /
+ [/USER/LOGIN]
+```
+
+Here we are using the leaf nodes as file system so they become like folders for example we have aboce `USER` folder and further inside its value.
