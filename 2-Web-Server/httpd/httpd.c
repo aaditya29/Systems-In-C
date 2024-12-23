@@ -9,8 +9,20 @@
 
 #define LISTENADDR "127.0.0.1" // IP Address of local host
 
-int srv_init()
+int srv_init(int portno)
 {
+    // returning 0 on error  else returns socked fd(descriptor)
+    int s;                               // return value
+    struct sockaddr_in srv;              // structure to store server address
+    s = socket(AF_INET, SOCK_STREAM, 0); // creating a socket
+    if (s < 0)
+    {
+        return 0;
+    }
+
+    srv.sin_family = AF_INET;                    // setting the address family
+    srv.sin_addr.s_addr = inet_addr(LISTENADDR); // setting the IP address
+    srv.sin_port = htons(portno);                // setting the port number
 }
 
 int main(int argc, char *argv[])
