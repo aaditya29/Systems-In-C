@@ -60,3 +60,14 @@ In this example:
 ```
 
 Here we are using the leaf nodes as file system so they become like folders for example we have aboce `USER` folder and further inside its value.
+
+But to define the data structure of this kind in the C language we will have to modify it. So here we will use `Union` to store the tree.
+
+```C
+union u_tree{
+    struct s_node n;
+    struct s_leaf l;
+};
+```
+
+Here we have a data structure `Union` which looks like a structure but there is significant difference between them. If it was a struct then `s_node n` and `s_leaf l` would have its own memory location but here they share the same memory location. Hence here `Union` contains either node or leaf not both.
