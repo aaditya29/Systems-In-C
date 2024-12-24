@@ -45,3 +45,12 @@ struct s_leaf
     int16 size;          // for storing the size of the value
 };
 typedef struct s_leaf Leaf;
+
+// Creating tree structre
+union u_tree
+{
+    // we can have either one node or one leaf at a time
+    Node n;
+    Leaf l;
+};
+typedef union u_tree Tree;
