@@ -1,6 +1,6 @@
 flags=-Wall -O2 -std=c2x
 
-all: tree
+all: clean tree
 
 tree: tree.o
 	cc ${flags} $^ -o $@ ${ldflags}
