@@ -26,9 +26,9 @@ Node *create_node(Node *parent, int8 *path)
     int16 size;     // size of the path
     assert(parent); // check if parent is not null
     // allocation of memory
-    size = sizeof(struct s_node); // Calculating the size of the structure 's_node' in bytes
-    n = (Node *)malloc(size);     // Allocating memory for the structure 's_node'
-    zero((int8 *)n, size);        // Setting the memory to zero
+    size = sizeof(struct s_node);  // Calculating the size of the structure 's_node' in bytes
+    n = (Node *)malloc((int)size); // Allocating memory for the structure 's_node'
+    zero((int8 *)n, size);         // Setting the memory to zero
     // linking  up
     parent->west = n;                            // setting the parent's west to the new node structure
     n->tag = TagNode;                            // setting the tag to node
@@ -40,6 +40,15 @@ Node *create_node(Node *parent, int8 *path)
 
 int main()
 {
-    printf("%p\n", (void *)&root);
+    Node *n, *n2;                              // creating nodes
+    n = create_node((Node *)&root, "/Users/"); // creating a node with the path '/Users/' and parent
+    assert(n);                                 // checking if the node is not null
+    n2 = create_node(n, "/Users/login");       // creating a node with the path '/Users/login'
+    assert(n2);                                // checking if the node is not null
+    // printing addresses of these pointers
+    printf("%p %p\n", n, n2);
+    // freeing the memory
+    free(n2);
+    free(n);
     return 0;
 }
