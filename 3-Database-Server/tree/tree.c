@@ -26,6 +26,16 @@ Node *create_node(Node *parent, int8 *path)
     int16 size;     // size of the path
     assert(parent); // check if parent is not null
     // allocation of memory
+    size = sizeof(struct s_node); // Calculating the size of the structure 's_node' in bytes
+    n = (Node *)malloc(size);     // Allocating memory for the structure 's_node'
+    zero((int8 *)n, size);        // Setting the memory to zero
+    // linking  up
+    parent->west = n;                            // setting the parent's west to the new node structure
+    n->tag = TagNode;                            // setting the tag to node
+    n->north = parent;                           // setting the north to the parent
+    strncpy((char *)n->path, (char *)path, 255); // copying the path to the node
+
+    return n; // returning the node
 }
 
 int main()
