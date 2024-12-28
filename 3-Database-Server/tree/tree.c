@@ -9,6 +9,17 @@ Tree root = {.n = {
                  .path = "/",                // root path
              }};
 
+// function to set the value to zero
+void zero(int8 *str, int16 size)
+{
+    int8 *p;
+    int16 n;
+    for (n = 0, p = str; n < size; p++, n++)
+    {
+        *p = 0;
+    }
+    return;
+}
 Node *create_node(Node *parent, int8 *path)
 {
     Node *n;        // creating a node
