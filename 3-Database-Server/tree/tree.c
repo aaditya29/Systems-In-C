@@ -38,6 +38,11 @@ Node *create_node(Node *parent, int8 *path)
     return n; // returning the node
 }
 
+// Creating leaves
+Leaf *create_leaf(int8 *key, int16 size)
+{
+}
+
 int main()
 {
     Node *n, *n2;                                      // creating nodes
