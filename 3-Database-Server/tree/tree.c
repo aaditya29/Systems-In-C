@@ -40,11 +40,11 @@ Node *create_node(Node *parent, int8 *path)
 
 int main()
 {
-    Node *n, *n2;                              // creating nodes
-    n = create_node((Node *)&root, "/Users/"); // creating a node with the path '/Users/' and parent
-    assert(n);                                 // checking if the node is not null
-    n2 = create_node(n, "/Users/login");       // creating a node with the path '/Users/login'
-    assert(n2);                                // checking if the node is not null
+    Node *n, *n2;                                      // creating nodes
+    n = create_node((Node *)&root, (int8 *)"/Users/"); // creating a node with the path '/Users/' and parent
+    assert(n);                                         // checking if the node is not null
+    n2 = create_node(n, (int8 *)"/Users/login");       // creating a node with the path '/Users/login'
+    assert(n2);                                        // checking if the node is not null
     // printing addresses of these pointers
     printf("%p %p\n", n, n2);
     // freeing the memory
