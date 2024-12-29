@@ -45,7 +45,12 @@ Leaf *create_leaf(int8 *key, int16 size)
     int16 leaf_size; // size of the leaf
     // allocation of memory
     leaf_size = sizeof(struct s_leaf);  // Calculating the size of the structure 's_leaf' in bytes
-    l = (Leaf *)malloc((int)leaf_size); // Allocating memory for the
+    l = (Leaf *)malloc((int)leaf_size); // Allocating memory for thestructure 's_leaf'
+    zero((int8 *)l, leaf_size);         // Setting the memory to zero
+    // linking up
+    l->tag = TagLeaf;                           // setting the tag to leaf
+    strncpy((char *)l->key, (char *)key, size); // copying the key to the leaf
+    return l;                                   // returning the leaf
 }
 
 int main()
