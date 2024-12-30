@@ -12,7 +12,13 @@
 #define TagNode 2 // in binary 00 10
 #define TagLeaf 4 // in binary 01 00
 
+typedef void *Nullptr;
+Nullptr nullptr = 0; // setting the null pointer to 0
+
 #define find_last(x) find_last_linear(x)
+#define reterr(x) \
+  errno = (x);
+return nullptr;
 
 /*
 Rough structure of the tree:
