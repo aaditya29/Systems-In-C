@@ -84,6 +84,8 @@ Leaf *create_leaf(Node *parent, int8 *key, int8 value, int16 count)
     zero(new->value, count);                            // setting the memory to zero
     assert(new->value);                                 // checking if the value is not null
     strncpy((char *)new->value, (char *)&value, count); // copying the value to the leaf
+    new->size = count;                                  // setting the size of the value
+    return l;                                           // returning the leaf
 }
 
 int main()
