@@ -76,6 +76,9 @@ Leaf *create_leaf(Node *parent, int8 *key, int16 count)
     {
         l->east = new; // setting the last leaf's east to the new leaf
     }
+    zero((int8 *)new, size);                       // setting the memory to zero
+    new->tag = TagLeaf;                            // setting the tag to leaf
+    new->west = (!l) ? (Node *)parent : (Leaf *)l; // setting the west to the parent or the last leaf
 }
 
 int main()
