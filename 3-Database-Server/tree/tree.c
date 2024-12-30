@@ -61,7 +61,7 @@ Leaf *create_leaf(Node *parent, int8 *key, int8 *value, int16 count)
 {
     Leaf *l, *new;         // creating a leaf and a new leaf
     int16 size;            // size of the leaf
-    assert(parent);        // checking if the parent is not null
+    assert(parent);        // checking if the parent is not `
     l = find_last(parent); // finding the last leaf
 
     size = sizeof(struct s_leaf); // Calculating the size of the structure 's_leaf' in bytes
