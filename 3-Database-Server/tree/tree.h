@@ -12,7 +12,7 @@
 #define TagNode 2 // in binary 00 10
 #define TagLeaf 4 // in binary 01 00
 
-#define find_last(x) find_last_linear(x) // find_last_binary(x)
+#define find_last(x) find_last_linear(x)
 
 /*
 Rough structure of the tree:
