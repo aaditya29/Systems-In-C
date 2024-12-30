@@ -57,10 +57,9 @@ Leaf *find_last_linear(Node *parent)
 }
 
 // Creating leaves
-Leaf *create_leaf(Node *parent, int8 *key, int8 value, int16 count)
+Leaf *create_leaf(Node *parent, int8 *key, int8 *value, int16 count)
 {
-    Leaf *l, *new;         // creating a leaf
-    Node *n;               // creating a node
+    Leaf *l, *new;         // creating a leaf and a new leaf
     int16 size;            // size of the leaf
     assert(parent);        // checking if the parent is not null
     l = find_last(parent); // finding the last leaf
@@ -78,7 +77,7 @@ Leaf *create_leaf(Node *parent, int8 *key, int8 value, int16 count)
     }
     zero((int8 *)new, size);                            // setting the memory to zero
     new->tag = TagLeaf;                                 // setting the tag to leaf
-    new->west = (!l) ? (Node *)parent : (Leaf *)l;      // setting the west to the parent or the last leaf
+    new->west = (!l) ? (Tree *)parent : (Tree *)l;      // setting the west to the parent or the last leaf
     strncpy((char *)new->key, (char *)key, 127);        // copying the key to the leaf
     new->value = (int8 *)malloc(count);                 // allocating memory for the value
     zero(new->value, count);                            // setting the memory to zero
