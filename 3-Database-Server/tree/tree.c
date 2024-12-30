@@ -38,6 +38,12 @@ Node *create_node(Node *parent, int8 *path)
     return n; // returning the node
 }
 // Creating leaves
+Leaf *create_leaf(Tree *west, int8 *key, int16 size)
+{
+    Leaf *l;      // creating a leaf
+    Node *n;      // creating a node
+    assert(west); // checking if the west is not null
+}
 
 int main()
 {
