@@ -17,8 +17,8 @@ Nullptr nullptr = 0; // setting the null pointer to 0
 
 #define find_last(x) find_last_linear(x)
 #define reterr(x) \
-  errno = (x);
-return nullptr;
+  errno = (x);    \
+  return nullptr
 
 /*
 Rough structure of the tree:
