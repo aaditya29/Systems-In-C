@@ -14,8 +14,7 @@
 
 #define NoError 0 // no error
 
-typedef void *Nullptr;
-Nullptr nullptr = 0; // setting the null pointer to 0
+#define nullptr NULL
 
 #define find_last(x) find_last_linear(x)
 #define reterr(x) \
