@@ -12,6 +12,8 @@
 #define TagNode 2 // in binary 00 10
 #define TagLeaf 4 // in binary 01 00
 
+#define NoError 0 // no error
+
 typedef void *Nullptr;
 Nullptr nullptr = 0; // setting the null pointer to 0
 
