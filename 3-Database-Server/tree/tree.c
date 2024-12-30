@@ -57,11 +57,25 @@ Leaf *find_last_linear(Node *parent)
 }
 
 // Creating leaves
-Leaf *create_leaf(Tree *west, int8 *key, int16 size)
+Leaf *create_leaf(Node *parent, int8 *key, int16 count)
 {
-    Leaf *l;      // creating a leaf
-    Node *n;      // creating a node
-    assert(west); // checking if the west is not null
+    Leaf *l, *new;         // creating a leaf
+    Node *n;               // creating a node
+    int16 size;            // size of the leaf
+    assert(parent);        // checking if the parent is not null
+    l = find_last(parent); // finding the last leaf
+
+    size = sizeof(struct s_leaf); // Calculating the size of the structure 's_leaf' in bytes
+    new = (Leaf *)malloc(size);   // Allocating memory for the structure 's_leaf'
+
+    if (!l)
+    {
+        parent->east = new; // setting the parent's east to the new leaf
+    }
+    else
+    {
+        l->east = new; // setting the last leaf's east to the new leaf
+    }
 }
 
 int main()
