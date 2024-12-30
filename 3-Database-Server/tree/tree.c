@@ -37,6 +37,13 @@ Node *create_node(Node *parent, int8 *path)
 
     return n; // returning the node
 }
+
+Leaf *find_last_linear(Node *parent)
+{
+    Leaf *l;        // creating a leaf
+    assert(parent); //  checking if the parent is not null
+}
+
 // Creating leaves
 Leaf *create_leaf(Tree *west, int8 *key, int16 size)
 {
