@@ -22,8 +22,11 @@ void zero(int8 *str, int16 size)
 }
 Node *create_node(Node *parent, int8 *path)
 {
-    Node *n;        // creating a node
-    int16 size;     // size of the path
+    Node *n;    // creating a node
+    int16 size; // size of the path
+
+    errno = NoError;
+
     assert(parent); // check if parent is not null
     // allocation of memory
     size = sizeof(struct s_node);  // Calculating the size of the structure 's_node' in bytes
@@ -40,8 +43,17 @@ Node *create_node(Node *parent, int8 *path)
 
 Leaf *find_last_linear(Node *parent)
 {
-    Leaf *l;        // creating a leaf
-    assert(parent); //  checking if the parent is not null
+    Leaf *l;         // creating a leaf
+    errno = NoError; // setting the error to no error
+    assert(parent);  //  checking if the parent is not null
+    if (!parent->east)
+    {
+        reterr(NoError);
+    }
+    for (l = parent->east; l->east; l = l->east)
+        ; // iterating through the east
+    assert(l);
+    return l;
 }
 
 // Creating leaves
