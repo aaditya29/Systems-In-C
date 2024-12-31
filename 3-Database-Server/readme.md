@@ -12,7 +12,7 @@ A **database server** is a server that uses a database application that provides
 
 Here we are going to design and code a fast in-memory database server. We will use knowledge of structs, linked lists, pointers and function pointers as well as linear searches, performance measuring, binary trees and hyper-optimized hash tables.
 
-### Designing Our Databse
+### Designing Our Database
 
 For this we will learn about **binary trees**.
 
@@ -108,3 +108,5 @@ struct s_leaf{
 ```
 
 Here we have leaf's link which contains one element which is string which will be allocated to the heap i.e. value pointer.
+
+### Creating Our Own Redis Database Server
