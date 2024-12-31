@@ -101,6 +101,10 @@ int main()
     key = (int8 *)"aaditya";
     value = (int8 *)"password";          // setting the key and value
     size = (int16)strlen((char *)value); // setting the size of the value
+    l1 = create_leaf(n2, key, value, size);
+    assert(l1);                // checking if the leaf is not null
+    printf("%s\n", l1->value); // printing the value
+
     // printing addresses of these pointers
     printf("%p %p\n", n, n2);
     // freeing the memory
