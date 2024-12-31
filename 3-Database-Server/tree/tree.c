@@ -90,7 +90,7 @@ Leaf *create_leaf(Node *parent, int8 *key, int8 *value, int16 count)
 int main()
 {
     Node *n, *n2;                                      // creating nodes
-    Leaf *l1, *l2;                                     // creating leaves
+    Leaf *l1;                                          // creating leaves
     int8 *key, *value;                                 // creating key and value
     int16 size;                                        // size of the value
     n = create_node((Node *)&root, (int8 *)"/Users/"); // creating a node with the path '/Users/' and parent
