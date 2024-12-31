@@ -110,3 +110,5 @@ struct s_leaf{
 Here we have leaf's link which contains one element which is string which will be allocated to the heap i.e. value pointer.
 
 ### Creating Our Own Redis Database Server
+
+Redis is an open-source, in-memory data structure store, used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, and sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams.
