@@ -99,7 +99,7 @@ int main()
     assert(n2);                                        // checking if the node is not null
 
     key = (int8 *)"aaditya";
-    value = (int8 *)"tan12345yy";        // setting the key and value
+    value = (int8 *)"tan12346yy";        // setting the key and value
     size = (int16)strlen((char *)value); // setting the size of the value
     l1 = create_leaf(n2, key, value, size);
     assert(l1);                // checking if the leaf is not null
