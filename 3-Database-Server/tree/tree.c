@@ -90,7 +90,7 @@ Leaf *create_leaf(Node *parent, int8 *key, int8 *value, int16 count)
 int main()
 {
     Node *n, *n2;                                      // creating nodes
-    Leaf *l1;                                          // creating leaves
+    Leaf *l1, *l2;                                     // creating leaves
     int8 *key, *value;                                 // creating key and value
     int16 size;                                        // size of the value
     n = create_node((Node *)&root, (int8 *)"/Users/"); // creating a node with the path '/Users/' and parent
@@ -104,6 +104,13 @@ int main()
     l1 = create_leaf(n2, key, value, size);
     assert(l1);                // checking if the leaf is not null
     printf("%s\n", l1->value); // printing the value
+
+    // printing the key
+    key = (int8 *)"mishra";
+    value = (int8 *)"tan28068yy"; // setting the key and value
+    size = (int16)strlen((char *)value);
+    l2 = create_leaf(n2, key, value, size);
+    assert(l2); // checking if the leaf is not null
 
     // printing addresses of these pointers
     printf("%p %p\n", n, n2);
