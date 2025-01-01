@@ -124,4 +124,13 @@ Redis is an open-source, in-memory data structure store, used as a database, cac
 
 > What Makes Redis Special:
 
-Every operation on `Redis` is <b>atmoic</b> i.e. series of database operations within a transaction are treated as a single unit. In layman terms it means that either all operations in the transaction are completed successfully, or none of them are. If any operation within the transaction fails, the entire transaction is rolled back, leaving the database in its original state before the transaction began.
+Every operation on `Redis` such as:
+
+- Putting a key
+- adding to the lists
+- set union/intersection
+- incrementing the value
+
+are <b>atomic</b> i.e. series of database operations within a transaction are treated as a single unit. In layman terms it means that either all operations in the transaction are completed successfully, or none of them are. If any operation within the transaction fails, the entire transaction is rolled back, leaving the database in its original state before the transaction began.
+
+Also data is stored <b>in-memory</b> hence the most common use of Redis is for 'caching' but Redis also provides configurable persistence i.e. peridocially dumping data to disk, write-ahead log of all commands and no persistence at all.
