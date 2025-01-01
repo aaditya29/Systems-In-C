@@ -2,7 +2,7 @@
 
 A **database server** is a server that uses a database application that provides database services to other computer programs or computers. It is responsible for storing, retrieving, and managing database services and data.
 
-## Key Features
+### Key Features
 
 - **Data Storage**: Stores data in a structured format.
 - **Data Retrieval**: Allows for efficient querying and retrieval of data.
@@ -12,11 +12,11 @@ A **database server** is a server that uses a database application that provides
 
 Here we are going to design and code a fast in-memory database server. We will use knowledge of structs, linked lists, pointers and function pointers as well as linear searches, performance measuring, binary trees and hyper-optimized hash tables.
 
-### Designing Our Database
+## Designing Our Database
 
 For this we will learn about **binary trees**.
 
-#### Binary Trees
+### Binary Trees
 
 A **binary tree** is a tree data structure in which each node has at most two children, referred to as the left child and the right child. It is used for various applications such as searching, sorting, and maintaining a dynamic set of ordered data.
 
@@ -109,7 +109,7 @@ struct s_leaf{
 
 Here we have leaf's link which contains one element which is string which will be allocated to the heap i.e. value pointer.
 
-### Creating Our Own Redis Database Server
+## Creating Our Own Redis Database Server
 
 Redis is an open-source, in-memory data structure store, used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, and sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams.
 
@@ -134,3 +134,5 @@ Every operation on `Redis` such as:
 are <b>atomic</b> i.e. series of database operations within a transaction are treated as a single unit. In layman terms it means that either all operations in the transaction are completed successfully, or none of them are. If any operation within the transaction fails, the entire transaction is rolled back, leaving the database in its original state before the transaction began.
 
 Also data is stored <b>in-memory</b> hence the most common use of Redis is for 'caching' but Redis also provides configurable persistence i.e. peridocially dumping data to disk, write-ahead log of all commands and no persistence at all.
+
+### Programming Models of Redis
