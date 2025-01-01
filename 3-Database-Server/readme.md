@@ -146,4 +146,8 @@ Redis has programming model called 'Concurrent Programming Model(Single Process)
    b) $R2-->INCR K-->T2$
 
    But this might lead to a problem where we have to ensure data correctness because for example if $K=10$, and two threads executing K++ then possible final values of K are 11 and 12.<br>
-   Hence we have to make sure other threats wait while one thread is executing the critical section.
+   Hence we have to make sure other threads wait while one thread is executing the critical section.
+
+2. I/O Multiplexing(Apparent Concurrency):
+   I/O multiplexing is a programming technique that allows a single process to manage multiple I/O operations simultaneously. is a crucial feature in Redis that enables it to efficiently manage multiple client connections simultaneously. This technique allows Redis to serve a high number of requests without the need for multiple threads, leveraging a single-threaded event loop to handle I/O operations.<br>
+   This is also how event loops are implemented.<br>
