@@ -136,3 +136,14 @@ are <b>atomic</b> i.e. series of database operations within a transaction are tr
 Also data is stored <b>in-memory</b> hence the most common use of Redis is for 'caching' but Redis also provides configurable persistence i.e. peridocially dumping data to disk, write-ahead log of all commands and no persistence at all.
 
 ### Programming Models of Redis
+
+Redis has programming model called 'Concurrent Programming Model(Single Process)' which is all about doing more than one thing at the same time. We have following ways to achieve concurrency in a single process model:
+
+1. Multi-Threading:<br>
+   Each incoming request over the network is accepted by the server and executed in a separate thread.<br>
+   <b>For example:</b><br>
+   a) $R1--> INCR K-->T1$<br>
+   b) $R2-->INCR K-->T2$
+
+   But this might lead to a problem where we have to ensure data correctness because for example if $K=10$, and two threads executing K++ then possible final values of K are 11 and 12.<br>
+   Hence we have to make sure other threats wait while one thread is executing the critical section.
