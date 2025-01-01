@@ -139,7 +139,7 @@ Also data is stored <b>in-memory</b> hence the most common use of Redis is for '
 
 Redis has programming model called 'Concurrent Programming Model(Single Process)' which is all about doing more than one thing at the same time. We have following ways to achieve concurrency in a single process model:
 
-1. Multi-Threading:<br>
+1. <b>Multi-Threading:<b/><br>
    Each incoming request over the network is accepted by the server and executed in a separate thread.<br>
    <b>For example:</b><br>
    a) $R1--> INCR K-->T1$<br>
@@ -148,13 +148,13 @@ Redis has programming model called 'Concurrent Programming Model(Single Process)
    But this might lead to a problem where we have to ensure data correctness because for example if $K=10$, and two threads executing K++ then possible final values of K are 11 and 12.<br>
    Hence we have to make sure other threads wait while one thread is executing the critical section.
 
-2. I/O Multiplexing(Apparent Concurrency):
+2. <b>I/O Multiplexing(Apparent Concurrency):</b><br>
    I/O multiplexing is a programming technique that allows a single process to manage multiple I/O operations simultaneously. is a crucial feature in Redis that enables it to efficiently manage multiple client connections simultaneously. This technique allows Redis to serve a high number of requests without the need for multiple threads, leveraging a single-threaded event loop to handle I/O operations.<br>
    This is also how event loops are implemented.<br>
 
 ### How Single-Threaded Redis is So Fast?
 
-> Redis Uses following two tricks
+> Redis Uses following two tricks:
 
 - It keeps network I/O slow i.e. it waits to recieve commands.
 - In-memory operations is fast i.e. upon receiving commands Redis can very quickly execute them.
