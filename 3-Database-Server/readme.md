@@ -151,3 +151,15 @@ Redis has programming model called 'Concurrent Programming Model(Single Process)
 2. I/O Multiplexing(Apparent Concurrency):
    I/O multiplexing is a programming technique that allows a single process to manage multiple I/O operations simultaneously. is a crucial feature in Redis that enables it to efficiently manage multiple client connections simultaneously. This technique allows Redis to serve a high number of requests without the need for multiple threads, leveraging a single-threaded event loop to handle I/O operations.<br>
    This is also how event loops are implemented.<br>
+
+### How Single-Threaded Redis is So Fast?
+
+> Redis Uses following two tricks
+
+- It keeps network I/O slow i.e. it waits to recieve commands.
+- In-memory operations is fast i.e. upon receiving commands Redis can very quickly execute them.
+
+This is why Redis is:
+
+- Single Threaded as no need of mutex, semaphores and waiting.
+- Also doing I/O Multiplexing i.e. handling multiple TCP connections concurrently.
