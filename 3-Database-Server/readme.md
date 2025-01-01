@@ -112,3 +112,16 @@ Here we have leaf's link which contains one element which is string which will b
 ### Creating Our Own Redis Database Server
 
 Redis is an open-source, in-memory data structure store, used as a database, cache, and message broker. It supports various data structures such as strings, hashes, lists, sets, and sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes, and streams.
+
+> Applications Where These Data Structures Help:
+
+- Realtime Chat
+- Message Buffers
+- Gaming Leaderboards
+- Auth Session Stores
+- Media Streaming
+- Realtime Analytics
+
+> What Makes Redis Special:
+
+Every operation on `Redis` is <b>atmoic</b> i.e. series of database operations within a transaction are treated as a single unit. In layman terms it means that either all operations in the transaction are completed successfully, or none of them are. If any operation within the transaction fails, the entire transaction is rolled back, leaving the database in its original state before the transaction began.
