@@ -163,3 +163,15 @@ This is why Redis is:
 
 - Single Threaded as no need of mutex, semaphores and waiting.
 - Also doing I/O Multiplexing i.e. handling multiple TCP connections concurrently.
+
+#### Structure of Our Database Server
+
+In our database we will focus on CPU optimisation rather than focussing on size. Our protocol will use `ASCII` and we will be able to use protocols like telnet, localhost and port for example like 6565.
+Rough skeleton of our protocol will look as follows:
+
+```SQL
+CREATE /Users/
+200 OK
+INSERT /Users/key value
+SELECT /Users/key
+```
