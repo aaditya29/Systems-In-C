@@ -1,7 +1,9 @@
 #include "cache22.h"
 
+bool scontinuation;
+
 int main(int argc, char *argv[])
 {
-
-        return 0;
+    scontinuation = true;
+    return 0;
 }
