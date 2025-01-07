@@ -9,4 +9,4 @@ typedef unsigned short int int16; // defining the integer of 16 bits
 typedef unsigned char int8;       // defining the integer of 8 bits
 
 void mainloop(void);
-void main(int, char **);
+int main(int, char **);
