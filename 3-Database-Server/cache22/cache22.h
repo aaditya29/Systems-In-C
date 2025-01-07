@@ -16,7 +16,7 @@
 #include <netinet/in.h>
 
 #define HOST "127.0.0.1"
-#define PORT 12000
+#define PORT 12049
 
 typedef unsigned int int32;       // defining the integer of 32 bits
 typedef unsigned short int int16; // defining the integer of 16 bits
