@@ -12,18 +12,25 @@ void mainloop(int16 port)
     sock.sin_addr.s_addr = inet_addr(HOST); // setting the address of the socket
 
     s = socket(AF_INET, SOCK_STREAM, 0); // creating a socket
-    assert(s > 0);
-
-    // binding the socket with the structure
-    if (bind(s, (struct sockaddr *)&sock, sizeof(sock)))
+    if (s <= 0)
     {
-        assert_perror(errno); // checking if there is an error
+        fprintf(stderr, "Socket creation failed: %s\n", strerror(errno));
+        exit(1);
     }
 
-    errno = 0;
-    if (listen(s, 20))
+    // binding the socket with the structure
+    if (bind(s, (struct sockaddr *)&sock, sizeof(sock)) != 0)
     {
-        assert_perror(errno); // checking if there is an error
+        fprintf(stderr, "Bind failed: %s\n", strerror(errno));
+        close(s);
+        exit(1);
+    }
+
+    if (listen(s, 20) != 0)
+    {
+        fprintf(stderr, "Listen failed: %s\n", strerror(errno));
+        close(s);
+        exit(1);
     }
 }
 
