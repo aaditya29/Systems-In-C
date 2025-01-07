@@ -7,9 +7,9 @@ void mainloop(int16 port)
     struct sockaddr_in sock;
     int s;
 
-    sock.sin_family = AF_INET;              // setting the family of the socket
-    sock.sin_port = htons(port);            // setting the port of the socket
-    sock.sin_addr.s_addr = inet_addr(HOST); // setting the address of the socket
+    sock.sin_family = AF_INET;         // setting the family of the socket
+    sock.sin_port = htons(port);       // setting the port of the socket
+    sock.sin_addr.s_addr = INADDR_ANY; // setting the address of the socket
 
     s = socket(AF_INET, SOCK_STREAM, 0); // creating a socket
     if (s <= 0)
@@ -32,6 +32,7 @@ void mainloop(int16 port)
         close(s);
         exit(1);
     }
+    scontinuation = false;
 }
 
 int main(int argc, char *argv[])
