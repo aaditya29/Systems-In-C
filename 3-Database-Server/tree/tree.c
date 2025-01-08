@@ -105,7 +105,7 @@ int main()
     assert(l1);                // checking if the leaf is not null
     printf("%s\n", l1->value); // printing the value
 
-    // printing the key
+    // printing the key and value
     key = (int8 *)"mishra";
     value = (int8 *)"tan28068yy"; // setting the key and value
     size = (int16)strlen((char *)value);
