@@ -2,14 +2,18 @@
 
 bool scontinuation; // global variable for the server continuation
 
-void initserver(int16 port)
+void mainloop(int16 port)
+{
+}
+
+int initserver(int16 port)
 {
     struct sockaddr_in sock;
     int s;
 
-    sock.sin_family = AF_INET;         // setting the family of the socket
-    sock.sin_port = htons(port);       // setting the port of the socket
-    sock.sin_addr.s_addr = INADDR_ANY; // setting the address of the socket
+    sock.sin_family = AF_INET;              // setting the family of the socket
+    sock.sin_port = htons(port);            // setting the port of the socket
+    sock.sin_addr.s_addr = inet_addr(HOST); // setting the address of the socket
 
     s = socket(AF_INET, SOCK_STREAM, 0); // creating a socket
     if (s <= 0)
@@ -32,13 +36,17 @@ void initserver(int16 port)
         close(s);
         exit(1);
     }
-    scontinuation = false;
+
+    log("Server listening started on %s:%d\n", HOST, port);
+
+    return s;
 }
 
 int main(int argc, char *argv[])
 {
     char *sport;
     int16 port; // port number
+    int s;
     if (argc < 2)
     {
         sport = PORT;
@@ -49,10 +57,13 @@ int main(int argc, char *argv[])
     }
 
     port = (int16)atoi(sport); // converting the port number to integer
+
+    s = initserver(port);
+
     scontinuation = true;
     while (scontinuation)
     {
-        mainloop(port);
+        mainloop(s);
     }
     return 0;
 }
