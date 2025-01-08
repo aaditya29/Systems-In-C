@@ -2,7 +2,7 @@
 
 bool scontinuation; // global variable for the server continuation
 
-void mainloop(int16 port)
+void initserver(int16 port)
 {
     struct sockaddr_in sock;
     int s;
