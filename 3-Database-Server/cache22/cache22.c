@@ -2,7 +2,7 @@
 
 bool scontinuation; // global variable for the server continuation
 
-void mainloop(int16 port)
+void mainloop(int s)
 {
 }
 
