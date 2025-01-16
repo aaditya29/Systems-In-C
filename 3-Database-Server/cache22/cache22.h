@@ -9,6 +9,8 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <errno.h>
+#include <stddef.h>
+#include <stdarg.h>
 
 // network header files
 #include <arpa/inet.h>
@@ -18,6 +20,9 @@
 #define HOST "127.0.0.1"
 #define PORT "12049"
 
+/*
+Here we are defining a macro with the name log and its parameters. Here, x is a mandatory parameter, and args... is a variadic parameter, meaning it can accept a variable number of arguments. The _VA_OPT_ is a predefined macro that is used to check if the variadic parameter is empty or not. If it is not empty, then it will add a comma before the next argument.
+*/
 #define log(x, args...) \
     prtinf(x _VA_OPT_(, ) args)
 
