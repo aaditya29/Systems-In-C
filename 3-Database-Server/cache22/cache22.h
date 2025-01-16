@@ -21,10 +21,10 @@
 #define PORT "12049"
 
 /*
-Here we are defining a macro with the name log and its parameters. Here, x is a mandatory parameter, and args... is a variadic parameter, meaning it can accept a variable number of arguments. The _VA_OPT_ is a predefined macro that is used to check if the variadic parameter is empty or not. If it is not empty, then it will add a comma before the next argument.
+Here we are defining a macro with the name log and its parameters. Here, x is a mandatory parameter, and args... is a variadic parameter, meaning it can accept a variable number of arguments. The macro is defined to call the function prtinf with the parameters x and args.
 */
 #define log(x, args...) \
-    prtinf(x _VA_OPT_(, ) args)
+    printf(x, args)
 
 typedef unsigned int int32;       // defining the integer of 32 bits
 typedef unsigned short int int16; // defining the integer of 16 bits
