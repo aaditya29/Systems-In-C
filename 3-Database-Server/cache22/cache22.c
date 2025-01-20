@@ -37,7 +37,7 @@ int initserver(int16 port)
         exit(1);
     }
 
-    log("Server listening started on %s:%d\n", HOST, port);
+    printf("Server listening started on %s:%d\n", HOST, port);
 
     return s;
 }
