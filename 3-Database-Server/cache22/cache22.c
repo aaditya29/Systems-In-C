@@ -4,6 +4,9 @@ bool scontinuation; // global variable for the server continuation
 
 void mainloop(int s)
 {
+    // here now we will accept the connection one by one
+    struct sockaddr_in cli; // structure to store the client address
+    int s2;                 // socket for the client
 }
 
 int initserver(int16 port)
@@ -65,5 +68,9 @@ int main(int argc, char *argv[])
     {
         mainloop(s);
     }
+
+    printf("Shutting down the server.\n");
+    close(s); // closing the socket
+
     return 0;
 }
