@@ -7,6 +7,8 @@ void mainloop(int s)
     // here now we will accept the connection one by one
     struct sockaddr_in cli; // structure to store the client address
     int s2;                 // socket for the client
+
+    accept(s, )
 }
 
 int initserver(int16 port)
