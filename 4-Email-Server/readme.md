@@ -118,3 +118,34 @@ We will type following bash command using `mx record lookup` in the terminal to 
 ```sh
 host -t mx doctorbirch.com
 ```
+
+After this we will take the mail-server name in the command line to take the IP Number.
+
+```sh
+host -t a mailservername
+```
+
+If we get multiple result then we have to grab one of those to make a TCP connection using `telnet` command:
+
+```sh
+telnet ipaddress
+```
+
+Now we do the following commands:
+
+```sh
+EHLO domain-name
+
+MAIL FROM: <emailaddress>
+
+RCPT TO <emailaddress>>
+
+DATA
+
+From: <emailaddress>
+To: <emailaddress>
+Subject: Hello
+
+This is the message.
+.
+```
