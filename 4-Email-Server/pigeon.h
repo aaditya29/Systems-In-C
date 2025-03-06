@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <errno.h>
-#include <birchutils.h>
+#include "birchutils.h"
 
 typedef unsigned char int8;
 typedef unsigned short int int16;
