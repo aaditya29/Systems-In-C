@@ -24,6 +24,14 @@ typedef unsigned int int32;       // defining the integer of 32 bits
 typedef unsigned short int int16; // defining the integer of 16 bits
 typedef unsigned char int8;       // defining the integer of 8 bits
 
+struct s_client
+{
+    int s;       // socket for the client
+    char ip[16]; // ip address of the client
+    int16 port;  // port number of the client
+};
+typedef struct s_client Client;
+
 void mainloop(int);    // main loop function
 int initserver(int16); // server initialization function
 int main(int, char **);
