@@ -50,3 +50,15 @@ Mail servers implement various security measures to protect email communication,
 - **Spam Filtering:** Using filters to detect and block spam emails.
 
 By following these processes and protocols, a mail server ensures reliable and secure email communication.
+
+## About the Project
+
+In our project we are going to do just few following things because the complete mail server is very complex:
+
+1. Recieve e-mail.
+2. Send(redirect) email(SMTP Client)
+
+When we receieve an email:
+
+1. If the recepiient is in our domain `->` deliver the email to our local user.
+2. Otherwise `->` send the email further.
